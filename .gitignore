@@ -1,0 +1,4 @@
+node_modules/
+data/hall_of_fame.json
+.env
+.DS_Store

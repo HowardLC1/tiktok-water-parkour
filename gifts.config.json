@@ -1,0 +1,234 @@
+{
+  "settings": {
+    "comboMergeWindowMs": 1500,
+    "gracePeriodThresholdLevels": 1,
+    "minCoinsForLethalHit": 10,
+    "defaultGiftEffect": {
+      "type": "water_surge_minor",
+      "levelsDelta": -1,
+      "durationMs": 0,
+      "messageTemplate": "{user} отправил подарок и опустил тебя на 1 уровень!"
+    }
+  },
+  "gifts": {
+    "Rose": {
+      "giftId": 5655,
+      "coins": 1,
+      "role": "sabotage",
+      "action": "move_levels",
+      "levelsDelta": -1,
+      "allowLethal": false,
+      "vfx": "splash_small",
+      "sfx": "water_drop",
+      "messageTemplate": "{user} подарил Розу (-1 уровень)"
+    },
+    "TikTok": {
+      "giftId": 5269,
+      "coins": 1,
+      "role": "sabotage",
+      "action": "move_levels",
+      "levelsDelta": -1,
+      "allowLethal": false,
+      "vfx": "splash_small",
+      "sfx": "water_drop",
+      "messageTemplate": "{user} подарил TikTok (-1 уровень)"
+    },
+    "GG": {
+      "giftId": 6064,
+      "coins": 1,
+      "role": "help",
+      "action": "move_levels",
+      "levelsDelta": 1,
+      "vfx": "heal_sparkle",
+      "sfx": "coin_up",
+      "messageTemplate": "{user} спас тебя с GG (+1 уровень)"
+    },
+    "Ice Cream Cone": {
+      "giftId": 5827,
+      "coins": 1,
+      "role": "help",
+      "action": "move_levels",
+      "levelsDelta": 1,
+      "vfx": "heal_sparkle",
+      "sfx": "coin_up",
+      "messageTemplate": "{user} угостил мороженым (+1 уровень)"
+    },
+    "Finger Heart": {
+      "giftId": 5487,
+      "coins": 5,
+      "role": "modifier",
+      "action": "apply_status",
+      "statusEffect": "slippery_platforms",
+      "durationMs": 10000,
+      "vfx": "ice_overlay",
+      "sfx": "freeze_light",
+      "messageTemplate": "{user} заморозил платформы на 10 сек!"
+    },
+    "Rosa": {
+      "giftId": 8913,
+      "coins": 10,
+      "role": "sabotage",
+      "action": "knockback_drop",
+      "levelsDelta": -3,
+      "knockbackForce": 450,
+      "allowLethal": true,
+      "vfx": "camera_shake_medium",
+      "sfx": "punch_hit",
+      "messageTemplate": "{user} нанес удар (-3 уровня)!"
+    },
+    "Gold Boxing Gloves": {
+      "giftId": 6369,
+      "coins": 10,
+      "role": "sabotage",
+      "action": "knockback_drop",
+      "levelsDelta": -3,
+      "knockbackForce": 500,
+      "allowLethal": true,
+      "vfx": "boxing_glove_hit",
+      "sfx": "punch_hit",
+      "messageTemplate": "{user} пробил хук (-3 уровня)!"
+    },
+    "Perfume": {
+      "giftId": 5658,
+      "coins": 20,
+      "role": "help",
+      "action": "freeze_water",
+      "durationMs": 8000,
+      "vfx": "frost_border",
+      "sfx": "ice_freeze",
+      "messageTemplate": "{user} заморозил воду на 8 сек!"
+    },
+    "Doughnut": {
+      "giftId": 5879,
+      "coins": 30,
+      "role": "chaos",
+      "action": "meteor_shower",
+      "projectileType": "doughnut",
+      "spawnRateMs": 600,
+      "durationMs": 10000,
+      "vfx": "warning_shadows",
+      "sfx": "whistle_fall",
+      "messageTemplate": "{user} вызвал дождь из пончиков!"
+    },
+    "Hand Heart": {
+      "giftId": 5585,
+      "coins": 100,
+      "role": "sabotage",
+      "action": "water_surge",
+      "waterRiseLevels": 5,
+      "durationMs": 3000,
+      "allowLethal": true,
+      "vfx": "red_alert_pulse",
+      "sfx": "siren_alarm",
+      "messageTemplate": "{user} вызвал ПРИЛИВ (+5 уровней воды)!"
+    },
+    "Confetti": {
+      "giftId": 5760,
+      "coins": 100,
+      "role": "sabotage",
+      "action": "water_surge",
+      "waterRiseLevels": 5,
+      "durationMs": 3000,
+      "allowLethal": true,
+      "vfx": "red_alert_pulse",
+      "sfx": "siren_alarm",
+      "messageTemplate": "{user} устроил прилив конфетти (+5 уровней воды)!"
+    },
+    "Sunglasses": {
+      "giftId": 5660,
+      "coins": 199,
+      "role": "help",
+      "action": "jetpack_shield",
+      "boostLevels": 6,
+      "durationMs": 15000,
+      "vfx": "jetpack_fire",
+      "sfx": "rocket_boost",
+      "messageTemplate": "{user} выдал реактивный ранец и щит на 15 сек!"
+    },
+    "Corgi": {
+      "giftId": 6267,
+      "coins": 299,
+      "role": "sabotage",
+      "action": "earthquake",
+      "levelsDelta": -5,
+      "platformMoveSpeed": 180,
+      "durationMs": 15000,
+      "allowLethal": true,
+      "vfx": "earthquake_rumble",
+      "sfx": "rumble_heavy",
+      "messageTemplate": "{user} устроил ЗЕМЛЕТРЯСЕНИЕ (-5 уровней)!"
+    },
+    "Money Gun": {
+      "giftId": 5659,
+      "coins": 500,
+      "role": "chaos",
+      "action": "reverse_controls_drop",
+      "levelsDelta": -7,
+      "durationMs": 15000,
+      "allowLethal": true,
+      "vfx": "money_rain",
+      "sfx": "cash_register",
+      "messageTemplate": "{user} инвертировал управление на 15 сек (-7 уровней)!"
+    },
+    "Swan": {
+      "giftId": 5563,
+      "coins": 699,
+      "role": "help",
+      "action": "drain_water",
+      "levelsDelta": 10,
+      "resetWaterToBottom": true,
+      "vfx": "golden_rays",
+      "sfx": "fanfare_victory",
+      "messageTemplate": "{user} ОСУШИЛ ВОДУ и поднял тебя на +10 уровней!"
+    },
+    "Galaxy": {
+      "giftId": 5509,
+      "coins": 1000,
+      "role": "ultimate_sabotage",
+      "action": "tsunami",
+      "levelsDelta": -15,
+      "setWaterDistanceLevels": 1,
+      "allowLethal": true,
+      "vfx": "tsunami_wave_fullscreen",
+      "sfx": "tsunami_roar",
+      "messageTemplate": "{user} ОБРУШИЛ ЦУНАМИ (-15 уровней)!"
+    },
+    "Whale Diving": {
+      "giftId": 6093,
+      "coins": 2150,
+      "role": "ultimate_sabotage",
+      "action": "poseidon_wrath",
+      "levelsDelta": -25,
+      "hideAlternatePlatforms": true,
+      "durationMs": 20000,
+      "allowLethal": true,
+      "vfx": "whale_splash_storm",
+      "sfx": "whale_horn",
+      "messageTemplate": "{user} призвал ГНЕВ ПОСЕЙДОНА (-25 уровней)!"
+    },
+    "Unicorn Fantasy": {
+      "giftId": 6059,
+      "coins": 5000,
+      "role": "ultimate_reset",
+      "action": "teleport_to_water_edge",
+      "setWaterDistanceLevels": 0.2,
+      "addToHallOfFame": true,
+      "allowLethal": true,
+      "vfx": "fullscreen_flash_hall_of_fame",
+      "sfx": "explosion_epic",
+      "messageTemplate": "ЛЕГЕНДА {user} сбросил весь прогресс к самой воде!"
+    },
+    "Diamond Gun": {
+      "giftId": 7134,
+      "coins": 5000,
+      "role": "ultimate_reset",
+      "action": "teleport_to_water_edge",
+      "setWaterDistanceLevels": 0.2,
+      "addToHallOfFame": true,
+      "allowLethal": true,
+      "vfx": "fullscreen_flash_hall_of_fame",
+      "sfx": "explosion_epic",
+      "messageTemplate": "ЛЕГЕНДА {user} выстрелил из Diamond Gun — сброс в самый низ!"
+    }
+  }
+}

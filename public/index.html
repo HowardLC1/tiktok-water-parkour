@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Water Parkour — TikTok LIVE</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game" width="1080" height="1920"></canvas>
+
+  <aside id="debug">
+    <header>
+      <h2>⚙️ Панель управления <small>(H — скрыть)</small></h2>
+      <button id="btnClose" class="icon">✕</button>
+    </header>
+
+    <section>
+      <h3>TikTok LIVE</h3>
+      <div class="row">
+        <input id="username" placeholder="tiktok username (без @)" autocomplete="off">
+        <button id="btnConnect" class="primary">Подключить</button>
+        <button id="btnDisconnect">Отключить</button>
+      </div>
+      <div class="row">
+        <span id="serverStatus" class="status muted">○ сервер</span>
+        <span id="connStatus" class="status muted">○ отключено</span>
+      </div>
+    </section>
+
+    <section>
+      <h3>Управление</h3>
+      <div class="row">
+        <label class="switch"><input type="checkbox" id="modeToggle" checked> 🤖 Авто-паркур (AI)</label>
+        <label class="switch"><input type="checkbox" id="autoReturn" checked> вернуть AI после 8с без ввода</label>
+      </div>
+      <div class="row">
+        <button id="btnRestart">🔁 Перезапустить раунд</button>
+        <label class="switch"><input type="checkbox" id="soundToggle" checked> 🔊 Звук</label>
+        <input type="range" id="volume" min="0" max="1" step="0.05" value="0.6">
+      </div>
+      <p class="hint">WASD / стрелки / пробел — ручное управление. P — переключить AI/ручной, R — рестарт, M — звук.</p>
+    </section>
+
+    <section>
+      <h3>Тест подарков (офлайн)</h3>
+      <div class="row">
+        <input id="testUser" placeholder="имя зрителя" value="Тестер">
+        <input id="testCount" type="number" min="1" max="99" value="1" title="count (комбо)">
+        <button id="btnDefault">Неизвестный подарок</button>
+      </div>
+      <div id="giftButtons" class="gifts"></div>
+    </section>
+
+    <section>
+      <h3>Лог</h3>
+      <pre id="log"></pre>
+    </section>
+  </aside>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
