@@ -49,6 +49,28 @@ export function normalizeGift(data = {}) {
   };
 }
 
+/** Sub-errors of the library's composite errors (one per source it tried). */
+function subErrors(err) {
+  return (err?.config?.requestErrs || []).map((e) => e?.message || String(e));
+}
+
+/** Turns the library's generic connect errors into an actionable Russian hint. */
+function describeConnectError(err, username) {
+  const msg = err?.message || String(err);
+  const details = subErrors(err).join(' | ');
+  if (/user_not_found/i.test(details)) {
+    return `Пользователь @${username} не найден. Нужен логин из ссылки tiktok.com/@логин, а не отображаемое имя.`;
+  }
+  if (/room id/i.test(msg)) {
+    return `Не удалось получить комнату @${username}: проверьте логин и что эфир уже запущен. `
+      + 'Если всё верно — TikTok блокирует запросы (выключите/смените VPN или задайте EULER_API_KEY).';
+  }
+  if (/offline|isn't online|not live/i.test(msg)) {
+    return `@${username} сейчас не в эфире. Сначала запустите трансляцию, потом подключайтесь.`;
+  }
+  return msg;
+}
+
 export class TikTokBridge extends EventEmitter {
   constructor({ signApiKey } = {}) {
     super();
@@ -128,8 +150,9 @@ export class TikTokBridge extends EventEmitter {
       console.log(`[tiktok] connected to @${this.username} (room ${this.roomId})`);
       return this.status();
     } catch (err) {
-      const msg = err?.message || String(err);
+      const msg = describeConnectError(err, this.username);
       console.error('[tiktok] connect failed:', msg);
+      for (const d of subErrors(err)) console.error('[tiktok]   ↳', d);
       this.connection = null;
       this._setState('error', msg);
       throw err;
